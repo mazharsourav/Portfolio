@@ -1,0 +1,25 @@
+<svg width="400" height="160" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="160" fill="#0f172a" />
+  <g transform="translate(150,30)">
+    <!-- T-piece -->
+    <rect x="1" y="1" width="18" height="18" rx="3" fill="#a855f7" />
+    <rect x="21" y="1" width="18" height="18" rx="3" fill="#a855f7" />
+    <rect x="41" y="1" width="18" height="18" rx="3" fill="#a855f7" />
+    <rect x="21" y="21" width="18" height="18" rx="3" fill="#a855f7" />
+    <!-- I-piece -->
+    <rect x="81" y="1" width="18" height="18" rx="3" fill="#22d3ee" />
+    <rect x="81" y="21" width="18" height="18" rx="3" fill="#22d3ee" />
+    <rect x="81" y="41" width="18" height="18" rx="3" fill="#22d3ee" />
+    <rect x="81" y="61" width="18" height="18" rx="3" fill="#22d3ee" />
+    <!-- O-piece -->
+    <rect x="1" y="41" width="18" height="18" rx="3" fill="#facc15" />
+    <rect x="21" y="41" width="18" height="18" rx="3" fill="#facc15" />
+    <rect x="1" y="61" width="18" height="18" rx="3" fill="#facc15" />
+    <rect x="21" y="61" width="18" height="18" rx="3" fill="#facc15" />
+    <!-- L-piece -->
+    <rect x="41" y="41" width="18" height="18" rx="3" fill="#fb923c" />
+    <rect x="41" y="61" width="18" height="18" rx="3" fill="#fb923c" />
+    <rect x="41" y="81" width="18" height="18" rx="3" fill="#fb923c" />
+    <rect x="61" y="81" width="18" height="18" rx="3" fill="#fb923c" />
+  </g>
+</svg>

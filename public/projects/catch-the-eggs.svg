@@ -1,0 +1,36 @@
+<svg width="400" height="160" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="160" fill="#0f172a" />
+
+  <!-- fall trails -->
+  <g stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" opacity="0.12">
+    <line x1="126" y1="12" x2="126" y2="46" />
+    <line x1="200" y1="4" x2="200" y2="26" />
+    <line x1="276" y1="28" x2="276" y2="66" />
+  </g>
+
+  <!-- falling eggs: white (1pt), gold (10pt), blue (5pt) -->
+  <ellipse cx="126" cy="62" rx="11" ry="14" fill="#f8fafc" />
+  <ellipse cx="123" cy="57" rx="4" ry="5" fill="#ffffff" opacity="0.7" />
+
+  <ellipse cx="200" cy="42" rx="11" ry="14" fill="#fbbf24" />
+  <ellipse cx="197" cy="37" rx="4" ry="5" fill="#fde68a" opacity="0.8" />
+
+  <ellipse cx="276" cy="82" rx="11" ry="14" fill="#60a5fa" />
+  <ellipse cx="273" cy="77" rx="4" ry="5" fill="#bfdbfe" opacity="0.8" />
+
+  <!-- basket -->
+  <g transform="translate(200,124)">
+    <rect x="-38" y="-6" width="76" height="10" rx="5" fill="#f59e0b" />
+    <path d="M -32 4 L 32 4 L 24 30 L -24 30 Z" fill="#d97706" />
+    <g stroke="#b45309" stroke-width="2" stroke-linecap="round">
+      <line x1="-20" y1="6" x2="-16" y2="28" />
+      <line x1="-6" y1="6" x2="-4" y2="28" />
+      <line x1="8" y1="6" x2="6" y2="28" />
+      <line x1="22" y1="6" x2="17" y2="28" />
+      <line x1="-29" y1="16" x2="29" y2="16" />
+    </g>
+  </g>
+
+  <!-- ground line -->
+  <rect x="0" y="154" width="400" height="6" fill="#1e293b" />
+</svg>
