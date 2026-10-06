@@ -4,10 +4,7 @@ My personal portfolio: a single-page site with my background, projects, skills, 
 
 **Live:** [mazharsourav.me](https://mazharsourav.me)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/home-dark.png">
-  <img alt="Portfolio home page: Mazhar Sourav, Full-Stack Developer, with a code card" src=".github/screenshots/home-light.png">
-</picture>
+![Portfolio home page: Mazhar Sourav, Full-Stack Developer, with a code card](.github/screenshots/home-light.png)
 
 ## Built with
 
@@ -89,32 +86,6 @@ npm run lint
     ├── workflows/deploy.yml       build and publish to GitHub Pages
     └── screenshots/               README screenshots
 ```
-
-## Editing content
-
-**All content lives in [`lib/data.ts`](lib/data.ts).** Components only handle layout and read everything from there, so updating the site rarely means touching a component.
-
-| To change… | Edit |
-|---|---|
-| Name, title, bio, CGPA badge | `profile` |
-| Site address and search description | `site` (also used by the sitemap, robots.txt and structured data) |
-| Education, experience | `education`, `experience` |
-| Projects | `projects`. Put the screenshot in `public/projects/` and set `image`. Use `live: "#"` to hide the Live button. |
-| Skills, achievements | `skillCategories`, `achievements`. Leave out `link` to hide the certificate button. |
-| Email, phone, location, contact form key | `contact` |
-| How many projects show before "Show More" | `INITIAL_COUNT` in `components/Projects.tsx` |
-
-**Other files to update by hand:**
-- **CV:** replace `public/Mazharul_Islam_Sourav_Resume.pdf` with a file of the same name.
-- **Preview card:** `app/opengraph-image.png` is a static image. If your name, title or photo changes, regenerate it.
-
-## Deployment
-
-Pushing to `main` runs [the GitHub Actions workflow](.github/workflows/deploy.yml). It builds the static export and publishes it to GitHub Pages. In the repository settings, set **Pages → Source** to **GitHub Actions**.
-
-The site is built for a custom domain at the root (`mazharsourav.me`). To serve it from `username.github.io/<repo>` instead, add `basePath: "/<repo>"` to `next.config.ts`, otherwise images and the CV won't load.
-
-After the first deploy, add the domain to [Google Search Console](https://search.google.com/search-console) and submit `sitemap.xml`.
 
 ## License
 
