@@ -42,7 +42,9 @@ export default function Navbar() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
-            history.replaceState(null, "", `#${entry.target.id}`);
+            // Keep the address clean at the top of the page; other sections get their #hash
+            const hash = entry.target.id === "home" ? "" : `#${entry.target.id}`;
+            history.replaceState(null, "", `${location.pathname}${location.search}${hash}`);
           }
         });
       },
@@ -56,7 +58,7 @@ export default function Navbar() {
   const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
-    history.pushState(null, "", "#home");
+    history.pushState(null, "", `${location.pathname}${location.search}`);
   };
 
   return (
