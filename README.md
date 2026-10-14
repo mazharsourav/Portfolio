@@ -30,19 +30,6 @@ My personal portfolio: a single-page site with my background, projects, skills, 
   - schema.org `Person` structured data
   - a preview card image for LinkedIn, WhatsApp, Facebook and X
 
-## Running it locally
-
-Requires Node.js 20 or newer.
-
-```bash
-npm install
-npm run dev       # http://localhost:3000
-```
-
-```bash
-npm run build     # static export into out/
-npm run lint
-```
 
 ## Project structure
 
