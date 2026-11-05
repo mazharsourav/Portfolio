@@ -6,7 +6,23 @@
 export const site = {
   url: "https://mazharsourav.me",
   description:
-    "Mazharul Islam Sourav (Mazhar Sourav) is a full stack developer in Dhaka, Bangladesh, building web apps with React, TypeScript, Node.js, Express and Django.",
+    "Mazharul Islam Sourav (Mazhar Sourav) is a full stack developer in Dhaka, Bangladesh, building web and mobile apps with React, React Native, Node.js and Django.",
+  // Search phrases for the projects and skills on this page
+  keywords: [
+    "Mazharul Islam Sourav",
+    "Mazhar Sourav",
+    "full stack developer Dhaka",
+    "full stack developer Bangladesh",
+    "frontend developer Bangladesh",
+    "React developer",
+    "React Native developer",
+    "Django developer",
+    "Android habit tracker app",
+    "event booking platform Django",
+    "SSLCommerz bKash Nagad integration",
+    "Chrome extension developer",
+    "Bangla NLP dataset",
+  ],
 };
 
 export const profile = {
@@ -16,7 +32,7 @@ export const profile = {
   initials: "MS",
   title: "Full-Stack Developer",
   tagline: "I turn \"what if\" into working software.",
-  bio: "Full stack developer and Computer Science and Engineering graduate from the University of Asia Pacific. I spent four months as a frontend intern at Eutropia IT, and on my own time I build and deploy web apps with React, TypeScript, Node.js, Express and Django. I'm looking for full stack or frontend roles in Dhaka or remote.",
+  bio: "Full stack developer and Computer Science and Engineering graduate from the University of Asia Pacific. I spent four months as a frontend intern at Eutropia IT, and on my own time I build and deploy web and mobile apps with React, React Native, TypeScript, Node.js, Express and Django. I'm looking for full stack or frontend roles in Dhaka or remote.",
   gpaBadge: "3.60 CGPA",
   role: "Computer Science and Engineering Graduate\n& Full Stack Developer",
   resumeUrl: "/Mazharul_Islam_Sourav_Resume.pdf",
@@ -77,17 +93,17 @@ export const skillCategories = [
   {
     title: "Programming Languages",
     icon: "code",
-    tags: ["JavaScript", "TypeScript", "Python", "Java"],
+    tags: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"],
   },
   {
-    title: "Frontend Development",
+    title: "Frontend & Mobile Development",
     icon: "layout",
-    tags: ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
+    tags: ["React", "Next.js", "React Native", "Expo", "Tailwind CSS", "HTML/CSS"],
   },
   {
     title: "Backend Development",
     icon: "server",
-    tags: ["Node.js", "Express.js", "REST APIs", "GraphQL"],
+    tags: ["Node.js", "Express.js", "Django", "REST APIs", "GraphQL"],
   },
   {
     title: "Databases",
@@ -112,10 +128,30 @@ type Project = {
   tags: string[];
   github: string;
   live: string;
+  download?: string; // direct file link, e.g. a mobile app's APK — shows a Download button
   image?: string; // path in public/, e.g. "/projects/tetris.png" — leave unset to use the placeholder art
 };
 
 export const projects: Project[] = [
+  {
+    title: "Day Book",
+    description:
+      "An ad-free habit and task tracker for Android, released as an installable APK. Streaks, reminders, a monthly calendar and backups, with no account and all data on your phone.",
+    tags: ["React Native", "Expo", "TypeScript", "Android"],
+    github: "https://github.com/mazharsourav/Day-Book",
+    live: "#",
+    download: "https://github.com/mazharsourav/Day-Book/releases/download/v2.0.0/Day.Book.-.2.0.0.apk",
+    image: "/projects/day-book.png",
+  },
+  {
+    title: "EventEase",
+    description:
+      "An event and venue booking platform with ticket tiers, QR-code PDF tickets, bKash, Nagad and card payments through SSLCommerz, and separate dashboards for attendees, organisers, venue managers and admins.",
+    tags: ["Python", "Django", "SQLite", "SSLCommerz"],
+    github: "https://github.com/mazharsourav/Event-Ease",
+    live: "#",
+    image: "/projects/eventease.png",
+  },
   {
     title: "NoteSwap",
     description:
@@ -137,16 +173,25 @@ export const projects: Project[] = [
   {
     title: "Bangla News Crawler",
     description:
-      "Tackles the shortage of Bangla AI training data by crawling 17 Bangla and English news sites into a clean, duplicate-free bilingual dataset, stored in SQLite and exportable to CSV or JSON.",
+      "Tackles the shortage of Bangla AI training data by crawling 17 Bangla and English news sites into a clean, duplicate-free bilingual dataset, exportable to CSV or JSON.",
     tags: ["Python", "Scrapy", "SQLite", "NLP"],
     github: "https://github.com/mazharsourav/Machine-Learning/tree/main/Advance/Web-Scraper",
     live: "#",
     image: "/projects/bangla-news-crawler.png",
   },
   {
+    title: "Peekword",
+    description:
+      "A Chrome extension for English learners. Select a word on any page to see its meaning and an example and hear it pronounced, with no account and no tracking.",
+    tags: ["JavaScript", "Chrome Extension", "Manifest V3", "Web Speech API"],
+    github: "https://github.com/mazharsourav/PeekWord",
+    live: "#",
+    image: "/projects/peekword.png",
+  },
+  {
     title: "Album Finder",
     description:
-      "Search any artist and browse their full Spotify discography — filter by albums, singles, or compilations, sort releases, and open tracklists with links straight to Spotify. An Express backend keeps the API credentials off the client.",
+      "Search any artist and browse their full Spotify discography: filter by release type, sort, and open tracklists. An Express backend keeps the API credentials off the client.",
     tags: ["React", "Vite", "Express", "Spotify API"],
     github: "https://github.com/mazharsourav/Album-Finder",
     live: "https://albumfinder-app.vercel.app/",
@@ -155,7 +200,7 @@ export const projects: Project[] = [
   {
     title: "Orbital",
     description:
-      "Track the International Space Station live on an interactive map with a position trail, telemetry, and the current crew roster, then browse NASA's Astronomy Picture of the Day archive back to 1995. A Vercel serverless proxy handles the crew data.",
+      "Track the International Space Station live on an interactive map with telemetry and the current crew roster, then browse NASA's Astronomy Picture of the Day archive back to 1995.",
     tags: ["TypeScript", "Vite", "Leaflet", "NASA API"],
     github: "https://github.com/mazharsourav/Orbital",
     live: "https://orbital-beta-green.vercel.app/",
@@ -226,6 +271,8 @@ export const contact = {
   email: "mazharsourav54@gmail.com",
   phone: "+880 1740-789064",
   location: "Dhaka, Bangladesh",
+  city: "Dhaka", // city and countryCode feed the location data for search engines
+  countryCode: "BD",
   availability: "Open to opportunities", // shown in the footer status bar — set to "" to hide it
   // Web3Forms access key — public by design, it only lets people send messages to this inbox
   web3formsKey: "05978f73-778a-4602-84f0-569cf4254df3",

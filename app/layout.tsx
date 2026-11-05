@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { profile, site } from "@/lib/data";
+import { contact, profile, site } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +21,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: siteTitle,
   description: site.description,
+  keywords: site.keywords,
   authors: [{ name: profile.fullName, url: site.url }],
+  creator: profile.fullName,
   alternates: { canonical: "/" },
+  // Lets search engines and AI answers quote the page and show large image previews
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
   openGraph: {
     type: "website",
     url: "/",
@@ -35,6 +43,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: site.description,
+  },
+  other: {
+    "geo.region": contact.countryCode,
+    "geo.placename": contact.city,
   },
 };
 

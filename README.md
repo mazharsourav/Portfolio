@@ -26,8 +26,9 @@ My personal portfolio: a single-page site with my background, projects, skills, 
 - **Contact form** with loading, success and error states, plus a honeypot field against spam bots.
 - **Search and sharing ready:**
   - title and description meta tags and a canonical URL
-  - `sitemap.xml` and `robots.txt`
-  - schema.org `Person` structured data
+  - `sitemap.xml` (with project images) and `robots.txt` (search and AI crawlers allowed)
+  - `llms.txt`, a plain-text summary for AI tools, generated from `lib/data.ts`
+  - schema.org `Person`, `ProfilePage` and project structured data
   - a preview card image for LinkedIn, WhatsApp, Facebook and X
 
 
@@ -41,6 +42,7 @@ My personal portfolio: a single-page site with my background, projects, skills, 
 │   ├── globals.css                light/dark theme colours and base styles
 │   ├── sitemap.ts                 generates sitemap.xml at build time
 │   ├── robots.ts                  generates robots.txt at build time
+│   ├── llms.txt/route.ts          generates llms.txt at build time
 │   ├── opengraph-image.png        link preview card (1200×630)
 │   ├── opengraph-image.alt.txt    alt text for the preview card
 │   ├── icon.svg                   favicon ("ms" logo)

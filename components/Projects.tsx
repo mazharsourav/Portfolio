@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Github, ExternalLink, ChevronDown, ChevronUp, FolderGit2 } from "lucide-react";
+import { Github, ExternalLink, Download, ChevronDown, ChevronUp, FolderGit2 } from "lucide-react";
 import { projects } from "@/lib/data";
 import { cardHover, buttonHover } from "@/lib/styles";
 import Reveal from "@/components/Reveal";
@@ -11,7 +11,6 @@ const INITIAL_COUNT = 6;
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? projects : projects.slice(0, INITIAL_COUNT);
   const hasMore = projects.length > INITIAL_COUNT;
 
   return (
@@ -19,14 +18,19 @@ export default function Projects() {
       <Reveal>
         <h2 className="text-3xl font-bold text-foreground">Projects</h2>
         <p className="mt-2 max-w-2xl text-muted">
-          Here are some of the projects I&apos;ve worked on, showcasing my skills
-          in various technologies and problem domains.
+          An Android app, full stack web apps, a Chrome extension, a bilingual
+          news crawler and a few games, each with its source code on GitHub.
         </p>
       </Reveal>
 
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((project, i) => (
-          <Reveal key={project.title} delay={Math.min(i * 0.07, 0.3)}>
+        {/* Collapsed cards stay in the HTML (only hidden visually) so crawlers can read every project */}
+        {projects.map((project, i) => (
+          <Reveal
+            key={project.title}
+            delay={Math.min(i * 0.07, 0.3)}
+            className={!showAll && i >= INITIAL_COUNT ? "hidden" : undefined}
+          >
             <div
               className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm ${cardHover}`}
             >
@@ -34,7 +38,7 @@ export default function Projects() {
                 <div className="relative h-40 w-full overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} project preview`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -82,6 +86,15 @@ export default function Projects() {
                     >
                       <ExternalLink size={14} />
                       Live Demo
+                    </a>
+                  )}
+                  {project.download && (
+                    <a
+                      href={project.download}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
+                    >
+                      <Download size={14} />
+                      Download APK
                     </a>
                   )}
                 </div>
